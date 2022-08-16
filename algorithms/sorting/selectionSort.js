@@ -1,3 +1,5 @@
+const swap = require("./swap");
+
 const selectionSort = (array) => {
     let arr = [...array];
     for (let i = 0; i < arr.length; i++) {
@@ -6,9 +8,7 @@ const selectionSort = (array) => {
             if (arr[j] < arr[minIndex])
                 minIndex = j;
         }
-        let temp = arr[i];
-        arr[i] = arr[minIndex];
-        arr[minIndex] = temp;
+        swap(arr, i, minIndex)
     }
     return arr;
 }
